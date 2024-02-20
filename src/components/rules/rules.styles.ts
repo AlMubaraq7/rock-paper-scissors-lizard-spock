@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 export const Button = styled.button`
   color: whitesmoke;
   background-color: transparent;
@@ -16,10 +17,9 @@ export const Button = styled.button`
   right: 2rem;
   cursor: pointer;
   @media only screen and (max-width: 480px) {
-    display: inline-block;
-    bottom: 1rem;
+    bottom: 0.5rem;
     right: 50%;
-    transform: translate(45%);
+    transform: translate(50%);
   }
 `
 export const RulesOverlay = styled.div<{ $active?: boolean }>`
@@ -31,7 +31,7 @@ export const RulesOverlay = styled.div<{ $active?: boolean }>`
   background-color: rgba(20, 21, 57, 0.8);
   display: ${props => (props.$active ? "block" : "none")};
   @media only screen and (max-width: 768px) {
-    height: 110vh;
+    height: 10vh;
   }
 `
 export const RulesContainer = styled.div`

@@ -125,7 +125,7 @@ const Result = () => {
     Outcome()
     let timer = setTimeout(() => {
       setLoading(false)
-    }, 1500)
+    }, 2000)
     dispatch(ensureNonNegative())
     return () => {
       clearTimeout(timer)
@@ -219,7 +219,7 @@ const Result = () => {
       </StatusBox>
       <Box>
         <Text>The House picked</Text>
-        {loading ? "" : housePickRender()}
+        {loading ? <Empty /> : housePickRender()}
       </Box>
     </Container>
   )

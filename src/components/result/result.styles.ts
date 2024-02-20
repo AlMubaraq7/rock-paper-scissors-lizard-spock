@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import { styled, keyframes } from "styled-components"
 import { Link } from "react-router-dom"
 export const Container = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
   @media only screen and (max-width: 480px) {
     gap: 0rem;
-    width: 120%;
+    width: 335px;
   }
 `
 export const Box = styled.div`
@@ -32,13 +32,36 @@ export const Box = styled.div`
     gap: 1.25rem;
   }
 `
+export const fadeInOut = keyframes`
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+  `
+
 export const Empty = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 50%;
   background-color: rgba(20, 23, 58, 0.4);
   align-self: center;
+  animation: ${fadeInOut} infinite 1s alternate;
+  @media only screen and (max-width: 768px) {
+    width: 180px;
+    height: 180px;
+  }
+  @media only screen and (max-width: 640px) {
+    width: 150px;
+    height: 150px;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 110px;
+    height: 110px;
+  }
 `
+
 export const Text = styled.span`
   text-align: center;
   letter-spacing: 3px;
@@ -54,7 +77,8 @@ export const Text = styled.span`
     font-size: 18px;
   }
   @media only screen and (max-width: 480px) {
-    font-size: 13px;
+    font-size: 11px;
+    letter-spacing: 2px;
   }
 `
 export const StatusBox = styled(Box)`
@@ -64,7 +88,7 @@ export const StatusBox = styled(Box)`
     flex: 1;
   }
   @media only screen and (max-width: 480px) {
-    flex: 2;
+    flex: 1;
   }
 `
 export const Status = styled.h1`
@@ -85,7 +109,7 @@ export const Status = styled.h1`
     font-size: 40px;
   }
   @media only screen and (max-width: 480px) {
-    margin-top: 8.5rem;
+    margin-top: 10rem;
     font-size: 35px;
   }
 `
@@ -135,10 +159,10 @@ export const PickContainer = styled.div`
     padding: 35px;
   }
   @media only screen and (max-width: 480px) {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border: 15px solid transparent;
-    padding: 32px;
+    padding: 28px;
   }
 `
 export const PickImg = styled.img`
@@ -185,6 +209,6 @@ export const SpockGrad = styled(PickContainer)`
     padding: 35px 40px;
   }
   @media only screen and (max-width: 480px) {
-    padding: 25px 32px;
+    padding: 23px 28px;
   }
 `
